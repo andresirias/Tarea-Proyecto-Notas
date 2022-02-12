@@ -1,38 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\andre\\Documents\\COSAS C# ETC\\BookListMVC\\BookListMVC\\BookListMVC.csproj": {}
+    "C:\\Users\\Admin\\Documents\\GENERAL (TEC)\\PROYECTO DE INGENIERÏA DE SOFTWARE\\Tarea-Proyecto-Notas\\BookListMVC\\BookListMVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\andre\\Documents\\COSAS C# ETC\\BookListMVC\\BookListMVC\\BookListMVC.csproj": {
+    "C:\\Users\\Admin\\Documents\\GENERAL (TEC)\\PROYECTO DE INGENIERÏA DE SOFTWARE\\Tarea-Proyecto-Notas\\BookListMVC\\BookListMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\andre\\Documents\\COSAS C# ETC\\BookListMVC\\BookListMVC\\BookListMVC.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Documents\\GENERAL (TEC)\\PROYECTO DE INGENIERÏA DE SOFTWARE\\Tarea-Proyecto-Notas\\BookListMVC\\BookListMVC.csproj",
         "projectName": "BookListMVC",
-        "projectPath": "C:\\Users\\andre\\Documents\\COSAS C# ETC\\BookListMVC\\BookListMVC\\BookListMVC.csproj",
-        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\andre\\Documents\\COSAS C# ETC\\BookListMVC\\BookListMVC\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Documents\\GENERAL (TEC)\\PROYECTO DE INGENIERÏA DE SOFTWARE\\Tarea-Proyecto-Notas\\BookListMVC\\BookListMVC.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Documents\\GENERAL (TEC)\\PROYECTO DE INGENIERÏA DE SOFTWARE\\Tarea-Proyecto-Notas\\BookListMVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -43,30 +41,30 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
             "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",
-              "version": "[3.1.18, )"
+              "version": "[6.0.2, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.9, )"
+              "version": "[6.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.9, )"
+              "version": "[6.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.9, )"
+              "version": "[6.0.2, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[3.1.5, )"
+              "version": "[6.0.2, )"
             }
           },
           "imports": [
@@ -87,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
