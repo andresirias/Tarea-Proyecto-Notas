@@ -1,4 +1,4 @@
-﻿using BookListMVC.Models;
+﻿using SistemaNotas.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BookListMVC.Controllers
+namespace SistemaNotas.Controllers
 {
     public class HomeController : Controller
     {

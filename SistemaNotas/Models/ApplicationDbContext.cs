@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BookListMVC.Models
+namespace SistemaNotas.Models
 {
     public class ApplicationDbContext : DbContext
     {

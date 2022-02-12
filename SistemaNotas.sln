@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31613.86
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookListMVC", "BookListMVC\BookListMVC.csproj", "{8815F50D-BDE4-4929-9185-D67ED618A4AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaNotas", "SistemaNotas\SistemaNotas.csproj", "{8815F50D-BDE4-4929-9185-D67ED618A4AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

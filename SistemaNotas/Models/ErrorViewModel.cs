@@ -1,6 +1,6 @@
 using System;
 
-namespace BookListMVC.Models
+namespace SistemaNotas.Models
 {
     public class ErrorViewModel
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace BookListMVC.Migrations
+namespace SistemaNotas.Migrations
 {
     public partial class AddBookToDb : Migration
     {
