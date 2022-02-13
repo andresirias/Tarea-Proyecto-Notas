@@ -40,6 +40,16 @@ namespace SistemaNotas.Controllers
             return View(Nota);
         }
 
+        public IActionResult View(int? id)
+        {
+            Nota = _db.Notas.FirstOrDefault(u => u.Id == id);
+            if (Nota == null)
+            {
+                return NotFound();
+            }
+            return View(Nota);
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Upsert()

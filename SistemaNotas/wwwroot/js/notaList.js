@@ -18,6 +18,10 @@ function loadDataTable() {
                 "data": "id",
                 "render": function (data) {
                     return `<div class="text-center">
+                        <a href="/Notas/View?id=${data}" class='btn btn-info text-white' style='cursor:pointer; width:70px;'>
+                            View
+                        </a>
+                        &nbsp;
                         <a href="/Notas/Upsert?id=${data}" class='btn btn-success text-white' style='cursor:pointer; width:70px;'>
                             Edit
                         </a>
