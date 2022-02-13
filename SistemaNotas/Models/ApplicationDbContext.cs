@@ -14,5 +14,6 @@ namespace SistemaNotas.Models
         }
 
         public DbSet<Nota> Notas { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }
