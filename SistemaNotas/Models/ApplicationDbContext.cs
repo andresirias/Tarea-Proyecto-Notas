@@ -13,6 +13,6 @@ namespace SistemaNotas.Models
 
         }
 
-        public DbSet<Book> Books { get; set; }
+        public DbSet<Nota> Notas { get; set; }
     }
 }

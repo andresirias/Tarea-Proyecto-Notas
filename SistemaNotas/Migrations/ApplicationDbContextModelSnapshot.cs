@@ -18,7 +18,7 @@ namespace SistemaNotas.Migrations
                 .HasAnnotation("ProductVersion", "5.0.9")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("SistemaNotas.Models.Book", b =>
+            modelBuilder.Entity("SistemaNotas.Models.Nota", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -37,7 +37,7 @@ namespace SistemaNotas.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Books");
+                    b.ToTable("Notas");
                 });
 #pragma warning restore 612, 618
         }

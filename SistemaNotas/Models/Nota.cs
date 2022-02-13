@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaNotas.Models
 {
-    public class Book
+    public class Nota
     {
         [Key]
         public int Id { get; set; }

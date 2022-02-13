@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace SistemaNotas.Controllers
 {
-    public class BooksController : Controller
+    public class NotasController : Controller
     {
         private readonly ApplicationDbContext _db;
         [BindProperty]
-        public Book Book { get; set; }
-        public BooksController(ApplicationDbContext db)
+        public Nota Nota { get; set; }
+        public NotasController(ApplicationDbContext db)
         {
             _db = db;
         }
@@ -25,19 +25,19 @@ namespace SistemaNotas.Controllers
 
         public IActionResult Upsert(int? id)
         {
-            Book = new Book();
+            Nota = new Nota();
             if (id == null)
             {
                 // create
-                return View(Book);
+                return View(Nota);
             }
             // update
-            Book = _db.Books.FirstOrDefault(u => u.Id == id);
-            if (Book == null)
+            Nota = _db.Notas.FirstOrDefault(u => u.Id == id);
+            if (Nota == null)
             {
                 return NotFound();
             }
-            return View(Book);
+            return View(Nota);
         }
 
         [HttpPost]
@@ -46,37 +46,37 @@ namespace SistemaNotas.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (Book.Id == 0)
+                if (Nota.Id == 0)
                 {
                     // create
-                    _db.Books.Add(Book);
+                    _db.Notas.Add(Nota);
                 }
                 else
                 {
-                    _db.Books.Update(Book);
+                    _db.Notas.Update(Nota);
                 }
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(Book);
+            return View(Nota);
         }
 
         #region API Calls
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            return Json(new { data = await _db.Books.ToListAsync() });
+            return Json(new { data = await _db.Notas.ToListAsync() });
         }
 
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
-            var bookFromDb = await _db.Books.FirstOrDefaultAsync(u => u.Id == id);
-            if (bookFromDb == null)
+            var notaFromDb = await _db.Notas.FirstOrDefaultAsync(u => u.Id == id);
+            if (notaFromDb == null)
             {
                 return Json(new { success = false, message = "Error while Deleting" });
             }
-            _db.Books.Remove(bookFromDb);
+            _db.Notas.Remove(notaFromDb);
             await _db.SaveChangesAsync();
             return Json(new { success = true, message = "Delete successful" });
         }

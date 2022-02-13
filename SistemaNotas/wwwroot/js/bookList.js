@@ -7,7 +7,7 @@ $(document).ready(function () {
 function loadDataTable() {
     dataTable = $('#DT_load').DataTable({
         "ajax": {
-            "url": "/books/getall/",
+            "url": "/notas/getall/",
             "type": "GET",
             "datatype": "json"
         },
@@ -19,12 +19,12 @@ function loadDataTable() {
                 "data": "id",
                 "render": function (data) {
                     return `<div class="text-center">
-                        <a href="/Books/Upsert?id=${data}" class='btn btn-success text-white' style='cursor:pointer; width:70px;'>
+                        <a href="/Notas/Upsert?id=${data}" class='btn btn-success text-white' style='cursor:pointer; width:70px;'>
                             Edit
                         </a>
                         &nbsp;
                         <a class='btn btn-danger text-white' style='cursor:pointer; width:70px;'
-                            onclick=Delete('/books/Delete?id='+${data})>
+                            onclick=Delete('/notas/Delete?id='+${data})>
                             Delete
                         </a>
                         </div>`;
