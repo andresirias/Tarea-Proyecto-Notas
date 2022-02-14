@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SistemaNotas.Models;
+using System.Linq;
 
 namespace SistemaNotas.Controllers
 {
@@ -18,7 +19,13 @@ namespace SistemaNotas.Controllers
         }
         public IActionResult Register()
         {
-            return View();
+            ViewBag.Title = "Registrarse";
+            return View("Auth");
+        }
+        public IActionResult Login()
+        {
+            ViewBag.Title = "Ingresar";
+            return View("Auth");
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -36,7 +43,21 @@ namespace SistemaNotas.Controllers
                     return RedirectToAction("Register");
                 }
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Login");
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Login(User user)
+        {
+            if (ModelState.IsValid)
+            {
+                var userExist = _db.Users.Any(u => u.Username == user.Username && u.Password == user.Password);
+                if (userExist)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            return RedirectToAction("Login");
         }
     }
 }
