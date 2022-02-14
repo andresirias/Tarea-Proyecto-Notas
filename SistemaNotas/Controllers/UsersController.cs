@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using SistemaNotas.Models;
 using System.Linq;
 
@@ -51,10 +52,16 @@ namespace SistemaNotas.Controllers
         {
             if (ModelState.IsValid)
             {
-                var userExist = _db.Users.Any(u => u.Username == user.Username && u.Password == user.Password);
-                if (userExist)
+                var userExists = _db.Users.Where(u => u.Username == user.Username).FirstOrDefault();
+                if (userExists != null)
                 {
-                    return RedirectToAction("Index", "Home");
+                    // check if password is correct
+                    if (userExists.Password == user.Password)
+                    {
+                        // create session
+                        HttpContext.Session.SetString("Username", userExists.Username);
+                        return RedirectToAction("Index", "Home");
+                    }
                 }
             }
             return RedirectToAction("Login");
