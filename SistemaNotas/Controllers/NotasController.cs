@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace SistemaNotas.Controllers
 {
@@ -20,11 +21,21 @@ namespace SistemaNotas.Controllers
 
         public IActionResult Index()
         {
+            // return login view if user is not logged in
+            if (HttpContext.Session.GetString("Username") == null)
+            {
+                return RedirectToAction("Login", "Users");
+            }
             return View();
         }
 
         public IActionResult Upsert(int? id)
         {
+            // return login view if user is not logged in
+            if (HttpContext.Session.GetString("Username") == null)
+            {
+                return RedirectToAction("Login", "Users");
+            }
             Nota = new Nota();
             if (id == null)
             {
@@ -42,6 +53,11 @@ namespace SistemaNotas.Controllers
 
         public IActionResult View(int? id)
         {
+            // return login view if user is not logged in
+            if (HttpContext.Session.GetString("Username") == null)
+            {
+                return RedirectToAction("Login", "Users");
+            }
             Nota = _db.Notas.FirstOrDefault(u => u.Id == id);
             if (Nota == null)
             {
@@ -54,6 +70,11 @@ namespace SistemaNotas.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Upsert()
         {
+            // return login view if user is not logged in
+            if (HttpContext.Session.GetString("Username") == null)
+            {
+                return RedirectToAction("Login", "Users");
+            }
             if (ModelState.IsValid)
             {
                 if (Nota.Id == 0)

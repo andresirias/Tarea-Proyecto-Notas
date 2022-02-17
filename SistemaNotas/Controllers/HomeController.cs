@@ -21,12 +21,12 @@ namespace SistemaNotas.Controllers
 
         public IActionResult Index()
         {
+            // return login view if user is not logged in
+            if (HttpContext.Session.GetString("Username") == null)
+            {
+                return RedirectToAction("Login", "Users");
+            }
             ViewBag.Username = HttpContext.Session.GetString("Username");
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
             return View();
         }
 

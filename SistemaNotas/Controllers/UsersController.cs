@@ -14,10 +14,6 @@ namespace SistemaNotas.Controllers
         {
             _db = db;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
         public IActionResult Register()
         {
             ViewBag.Title = "Registrarse";
