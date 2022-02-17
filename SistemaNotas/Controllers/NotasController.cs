@@ -80,6 +80,7 @@ namespace SistemaNotas.Controllers
                 if (Nota.Id == 0)
                 {
                     // create
+                    Nota.User = _db.Users.FirstOrDefault(u => u.Username == HttpContext.Session.GetString("Username"));
                     _db.Notas.Add(Nota);
                 }
                 else
@@ -96,7 +97,9 @@ namespace SistemaNotas.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            return Json(new { data = await _db.Notas.ToListAsync() });
+            // return user notes
+            var user = _db.Users.FirstOrDefault(u => u.Username == HttpContext.Session.GetString("Username"));
+            return Json(new { data = await _db.Notas.Where(u => u.User.Username == user.Username).ToListAsync() });
         }
 
         [HttpDelete]
