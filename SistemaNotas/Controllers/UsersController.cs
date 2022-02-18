@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SistemaNotas.Models;
+using System;
 using System.Linq;
+using System.Security.Cryptography;
 
 namespace SistemaNotas.Controllers
 {
@@ -14,6 +16,15 @@ namespace SistemaNotas.Controllers
         {
             _db = db;
         }
+
+        private static string Hash(byte[] input, string algorithm = "sha256")
+        {
+            using (var hashAlgorithm = HashAlgorithm.Create(algorithm))
+            {
+                return Convert.ToBase64String(hashAlgorithm.ComputeHash(input));
+            }
+        }
+
         public IActionResult Register()
         {
             ViewBag.Title = "Registrarse";
@@ -30,6 +41,8 @@ namespace SistemaNotas.Controllers
         {
             if (ModelState.IsValid)
             {
+                // hash password
+                user.Password = Hash(System.Text.Encoding.UTF8.GetBytes(user.Password));
                 _db.Users.Add(user);
                 try
                 {
