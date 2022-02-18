@@ -64,11 +64,11 @@ namespace SistemaNotas.Controllers
                 var userExists = _db.Users.Where(u => u.Username == user.Username).FirstOrDefault();
                 if (userExists != null)
                 {
-                    // check if password is correct
-                    if (userExists.Password == user.Password)
+                    // check if hashed password matches
+                    if (userExists.Password == Hash(System.Text.Encoding.UTF8.GetBytes(user.Password)))
                     {
                         // create session
-                        HttpContext.Session.SetString("Username", userExists.Username);
+                        HttpContext.Session.SetString("Username", user.Username);
                         return RedirectToAction("Index", "Home");
                     }
                 }
